@@ -1,7 +1,7 @@
 /*
 Copyright © 2022 NAME HERE <EMAIL ADDRESS>
 */
-package cmd
+package main
 
 import (
 	"github.com/alist-org/alist/v3/internal/conf"
@@ -11,7 +11,9 @@ import (
 	"github.com/alist-org/alist/v3/pkg/utils/random"
 	"github.com/spf13/cobra"
 )
-
+fun main(){
+	
+}
 // AdminCmd represents the password command
 var AdminCmd = &cobra.Command{
 	Use:     "admin",
