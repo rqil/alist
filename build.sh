@@ -124,7 +124,7 @@ BuildDev() {
     export GOARCH=${os_arch##*-}
     export CC=${cgo_cc}
     export CGO_ENABLED=1
-    go build -linkshared -o ./build/$appName-$os_arch -ldflags="$muslflags" -tags=jsoniter .
+    go install -o ./build/$appName-$os_arch -ldflags="$muslflags" -tags=jsoniter .
   done
 }
 
