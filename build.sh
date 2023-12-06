@@ -114,8 +114,8 @@ BuildDev() {
     sudo tar xf "${i}.tgz" --strip-components 1 -C /usr/local
     rm -f "${i}.tgz"
   done
-  OS_ARCHES=(linux-musl-arm64)
-  CGO_ARGS=(aarch64-linux-musl-gcc)
+  OS_ARCHES=(linux-musl-arm)
+  CGO_ARGS=(arm-linux-musl-gcc)
   for i in "${!OS_ARCHES[@]}"; do
     os_arch=${OS_ARCHES[$i]}
     cgo_cc=${CGO_ARGS[$i]}
@@ -124,7 +124,6 @@ BuildDev() {
     export GOARCH=${os_arch##*-}
     export CC=${cgo_cc}
     export CGO_ENABLED=1
-    go tool cgo -exportheader ./dist/$appName-$os_arch.h .
     go build -buildmode=c-archive -o ./dist/$appName-$os_arch.a -ldflags="$muslflags" -tags=jsoniter .
   done
     cd dist
