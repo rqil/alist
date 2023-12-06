@@ -107,20 +107,20 @@ BuildDev() {
   mkdir -p "dist"
   muslflags="--extldflags '-static -fpic' $ldflags"
   BASE="https://musl.nn.ci/"
-  FILES=(armv7l-linux-musleabihf-cross)
+  FILES=(armv7a-linux-musleabihf-cross)
   for i in "${FILES[@]}"; do
     url="${BASE}${i}.tgz"
     curl -L -o "${i}.tgz" "${url}"
     sudo tar xf "${i}.tgz" --strip-components 1 -C /usr/local
     rm -f "${i}.tgz"
   done
-  OS_ARCHES=(linux-musleabihf-armv7l)
-  CGO_ARGS=(armv7l-linux-musleabihf-gcc)
+  OS_ARCHES=(linux-musleabihf-armv7a)
+  CGO_ARGS=(armv7a-linux-musleabihf-gcc)
   for i in "${!OS_ARCHES[@]}"; do
     os_arch=${OS_ARCHES[$i]}
     cgo_cc=${CGO_ARGS[$i]}
     echo building for ${os_arch}
-    export GOOS=${os_arch%%-*}
+    export GOOS=${os_arch%%-*}a
     export GOARCH=${os_arch##*-}
     export CC=${cgo_cc}
     export CGO_ENABLED=1
