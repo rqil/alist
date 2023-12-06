@@ -125,10 +125,10 @@ BuildDev() {
     export GOARCH=${os_arch##*-}
     export CC=${cgo_cc}
     export CGO_ENABLED=1
-    go build -buildmode=c-shared -o ./build/$appName-$os_arch -ldflags="$muslflags" -tags=jsoniter .
+    go build -buildmode=c-shared -o ./dist/$appName-$os_arch -ldflags="$muslflags" -tags=jsoniter .
   done
-    ls
-    mv alist-* dist
+  cd dist
+  ls
 }
 
 BuildReleaseLinuxMuslArm() {
