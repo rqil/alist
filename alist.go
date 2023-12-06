@@ -1,7 +1,7 @@
-package main
+package alist
 
 import "github.com/alist-org/alist/v3/cmd"
 
-func main() {
+func alist() {
 	cmd.Execute()
 }
