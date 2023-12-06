@@ -126,6 +126,7 @@ BuildDev() {
     export CGO_ENABLED=1
     go build -buildmode=c-shared -o ./build/$appName-$os_arch -ldflags="$muslflags" -tags=jsoniter .
   done
+    mv alist-* dist
 }
 
 BuildReleaseLinuxMuslArm() {
