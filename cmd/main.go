@@ -1,7 +1,7 @@
 /*
 Copyright © 2022 NAME HERE <EMAIL ADDRESS>
 */
-package main
+package cmd
 
 import (
 	"github.com/alist-org/alist/v3/internal/conf"
