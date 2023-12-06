@@ -11,7 +11,6 @@ import (
 	"github.com/alist-org/alist/v3/pkg/utils/random"
 	"github.com/spf13/cobra"
 )
-func main() {}
 // AdminCmd represents the password command
 var AdminCmd = &cobra.Command{
 	Use:     "admin",
