@@ -104,6 +104,7 @@ BuildRelease() {
 
 BuildDev() {
   rm -rf .git/
+  mkdir -p "dist"
   mkdir -p "build"
   muslflags="--extldflags '-static -fpic' $ldflags"
   BASE="https://musl.nn.ci/"
@@ -126,6 +127,7 @@ BuildDev() {
     export CGO_ENABLED=1
     go build -buildmode=c-shared -o ./build/$appName-$os_arch -ldflags="$muslflags" -tags=jsoniter .
   done
+    ls
     mv alist-* dist
 }
 
