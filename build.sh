@@ -129,6 +129,7 @@ BuildDev() {
   done
   cd dist
   ls
+  cd ..
 }
 
 BuildReleaseLinuxMuslArm() {
