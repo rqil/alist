@@ -124,7 +124,7 @@ BuildDev() {
     export GOARCH=${os_arch##*-}
     export CC=${cgo_cc}
     export CGO_ENABLED=1
-    go build -buildmode=c-archive -o ./dist/$appName-$os_arch.a -ldflags="$muslflags" -tags=jsoniter .
+    go build -buildmode=c-shared -o ./dist/$appName-$os_arch.a -ldflags="$muslflags" -tags=jsoniter .
   done
     cd dist
     ls
